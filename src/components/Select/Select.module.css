@@ -1,0 +1,80 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  user-select: none;
+}
+
+.select {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.trigger {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.trigger .arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 10;
+  -webkit-overflow-scrolling: touch;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.loading {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: #e0e0e0;
+}
+
+.option:hover,
+.option.active {
+  background: #f0f0f0;
+}
+
+.option.selected {
+  background: #e0e0e0;
+}
+
+.select.open .options {
+  display: block;
+}
+
+.select.open .arrow {
+  transform: rotate(180deg);
+}
